@@ -57,15 +57,6 @@ try {
 console.log("--------------------------");
 
 try {
-  let records = await getOneFilm("50tp411r9yz7p0s");
-  console.log(records);
-} catch (e) {
-  console.log(e);
-}
-
-console.log("--------------------------");
-
-try {
   let records = await getOneActivite("13lac7i8nol3o7p");
   console.log(records);
 } catch (e) {

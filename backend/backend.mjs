@@ -1,10 +1,11 @@
 import PocketBase from "pocketbase";
-const pb = new PocketBase("http://127.0.0.1:8090");
+export const pb = new PocketBase("http://127.0.0.1:8090");
+pb.autoCancellation(false);
 
 export async function superAuth() {
   const authData = await pb
     .collection("_superusers")
-    .authWithPassword("admin@admin.com", "vzZZhb_5ncv6fFA");
+    .authWithPassword("admin@admin.com", "OO6FN9qKv81QxvM");
   return authData;
 }
 
@@ -75,6 +76,7 @@ export async function getInviteActivitiesById(id) {
   pb.authStore.clear();
   return records;
 }
+
 export async function getInviteActivitiesByName(nom) {
   await superAuth();
   let records = await pb.collection("activite").getFullList({
@@ -87,5 +89,6 @@ export async function getInviteActivitiesByName(nom) {
 export async function modifyAnyRecord(collection, id, data) {
   await superAuth();
   const record = await pb.collection(collection).update(id, data);
+  pb.authStore.clear();
   return record;
 }
