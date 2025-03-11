@@ -1,0 +1,75 @@
+---
+import logoBlanc from "../assets/logo_blanc.webp";
+---
+
+<header class="fixed z-150 inset-x-0 top-0">
+  <div class="px-4
+  flex
+  items-center
+  justify-between">
+    <a href="/"
+      ><img src={logoBlanc.src} alt="logo cinenature" class="h-16" /></a
+    >
+    <button
+      class="group relative z-20 flex h-6 w-8 flex-col justify-between *:h-[2px] *:w-full *:bg-white *:transition-all *:duration-300 *:ease"
+      id="menu-btn"
+      aria-label="Menu"
+      aria-controls="menu"
+      aria-expanded="false"
+    >
+      <span
+        class="group-aria-expanded:translate-y-[11px] group-aria-expanded:rotate-45"
+      ></span>
+      <span class="group-aria-expanded:opacity-0"></span>
+      <span
+        class="group-aria-expanded:-translate-y-[11px] group-aria-expanded:-rotate-45"
+      ></span>
+    </button>
+  </div>
+  <nav
+    class="visible fixed z-10 inset-0 bg-(--color-green) text-xl text-white opacity-100 transition-all duration-300 ease-in-out aria-hidden:invisible aria-hidden:opacity-0"
+    id="menu"
+    aria-hidden="true"
+  >
+    <ul class="mt-[25vh] px-8">
+      <li>
+        <a class="block px-5 py-4" href="/programme">Programme</a>
+      </li>
+      <li>
+        <a class="block px-5 py-4" href="/billeterie">Billeterie</a>
+      </li>
+      <li>
+        <a class="block px-5 py-4" href="/infos-pratiques"
+          >Lieu & Infos Pratiques</a
+        >
+      </li>
+      <li>
+        <a class="block px-5 py-4" href="/eco-responsabilite"
+          >Éco-Responsabilité</a
+        >
+      </li>
+      <li>
+        <a class="block px-5 py-4" href="/contact">Contact</a>
+      </li>
+      <li>
+        <a class="block px-5 py-4" href="/a-propos">À Propos</a>
+      </li>
+    </ul>
+  </nav>
+
+  <script>
+    const toggle = document.querySelector("#menu-btn");
+    const nav = document.querySelector("#menu");
+    const page = document.body;
+
+    if (toggle && nav) {
+      toggle.addEventListener("click", () => {
+        const isOpen = toggle.ariaExpanded === "true";
+        const isClosed = !isOpen;
+        toggle.ariaExpanded = String(isClosed);
+        nav.ariaHidden = String(isOpen);
+        page.classList.toggle("noscroll", isClosed);
+      });
+    }
+  </script>
+</header>
