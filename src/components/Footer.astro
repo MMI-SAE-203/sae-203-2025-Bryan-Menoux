@@ -1,9 +1,14 @@
 ---
 import footerMobileImg from "../assets/footer_mobile_popcorn.svg";
 import footerDesktopImg from "../assets/footer_desktop_popcorn.svg";
+
+import twitterIcon from "../assets/icons/twitter.svg";
+import facebookIcon from "../assets/icons/facebook.svg";
+import instagramIcon from "../assets/icons/instagram.svg";
+import tiktokIcon from "../assets/icons/tiktok.svg";
 ---
 
-<footer class="relative flex flex-col">
+<footer class="relative flex flex-col text-white">
   <img
     src={footerMobileImg.src}
     class="object-cover object-top min-w-full max-h-[60dvw] block md:hidden"
@@ -12,7 +17,9 @@ import footerDesktopImg from "../assets/footer_desktop_popcorn.svg";
     src={footerDesktopImg.src}
     class="object-cover object-top min-w-full h-[20dvw] md:block hidden"
   />
-  <div class="w-full bg-(--color-green) flex flex-col gap-4 px-6 py-12">
+  <div
+    class="w-full bg-(--color-green) grid grid-cols-1 md:grid-cols-2 gap-y-8 px-6 py-12"
+  >
     <ul>
       <li><a href="/contact">Contact</a></li>
       <li>
@@ -20,7 +27,47 @@ import footerDesktopImg from "../assets/footer_desktop_popcorn.svg";
       </li>
       <li><a href="/mentions-legales">Mentions légales</a></li>
     </ul>
-    <div></div>
-    <div></div>
+    <div class="flex flex-col gap-2">
+      <h4>Nous Suivre</h4>
+      <ul class="flex gap-2">
+        <li>
+          <a href="https://x.com/mmimontbeliard/" target="_blank"
+            ><img src={twitterIcon.src} alt="twitter" /></a
+          >
+        </li>
+        <li>
+          <a href="https://www.facebook.com/mmimontbeliard/" target="_blank"
+            ><img src={facebookIcon.src} alt="facebook" /></a
+          >
+        </li>
+        <li>
+          <a href="https://www.tiktok.com/@mmi_montbeliard" target="_blank"
+            ><img src={tiktokIcon.src} alt="tiktok" /></a
+          >
+        </li>
+        <li>
+          <a href="https://www.instagram.com/mmi_montbeliard/" target="_blank"
+            ><img src={instagramIcon.src} alt="instagram" /></a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="flex flex-col md:col-span-2 gap-2">
+      <h4>S'inscrire à la Newsletter</h4>
+      <form action="" class="flex flex-wrap gap-x-8 gap-y-2">
+        <label for="email" class="sr-only">Votre adresse email</label>
+        <input
+          type="email"
+          placeholder="Votre adresse email"
+          class="px-2 py-1 bg-transparent border-b border-(--color-beige) text-(--color-beige) focus:outline-(--color-beige) focus:outline-1 focus:rounded-l placeholder:text-white w-md"
+        />
+        <button
+          type="submit"
+          class="border border-(--color-beige) text-(--color-beige) py-2 px-6 mt-2 rounded-md"
+        >
+          S'inscrire
+        </button>
+      </form>
+    </div>
   </div>
 </footer>
