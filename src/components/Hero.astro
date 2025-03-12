@@ -1,23 +1,88 @@
 ---
+import fleche from "../assets/fleche_bas.webp";
+import Button from "./Button.astro";
 const props = Astro.props;
-let heroImg = props.heroImg;
+const hero = props.hero || {};
+let heroImg = hero.heroImg;
+let heroImgLg = hero.heroImgLg ?? heroImg;
 ---
 
-<div class="relative h-screen text-white flex flex-col gap-4">
-  <div class="absolute inset-0 duotone -z-10">
-    <img
-      src={heroImg}
-      alt="header background"
-      class="object-cover w-full h-full"
-    />
+<div
+  class={(heroImg
+    ? "h-full bg-transparent"
+    : "bg-(--color-green) max-h-[45dvh] lg:max-h-[70dvh] items-start") +
+    " hero relative h-screen text-white flex flex-col"}
+>
+  <div
+    class={(heroImg ? "absolute h-screen inset-0 -z-10" : "relative h-0") +
+      (hero.duotone ? " duotone" : "")}
+  >
+    {
+      heroImg && (
+        <img
+          src={heroImg}
+          alt="Hero Image"
+          class="w-full h-full block lg:hidden"
+        />
+      )
+    }
+    {
+      heroImgLg && (
+        <img
+          src={heroImgLg}
+          alt="Hero Image Large"
+          class="w-full h-full hidden lg:block"
+        />
+      )
+    }
   </div>
 
-  <div class="flex flex-col justify-center gap-4 h-full relative z-10 px-4">
-    <slot name="title" />
+  <div
+    class={(heroImg
+      ? "absolute inset-0 h-full w-full"
+      : "relative mt-0 lg:mt-32 w-full") +
+      " flex flex-col justify-center w-full gap-4 relative z-10 px-4 lg:px-16 pt-34"}
+  >
+    <h1>{hero.title}</h1>
     <div>
-      <slot name="chapo" />
-      <slot name="date" />
+      <p>{hero.description}</p>
+      <p>{hero.date}</p>
     </div>
-    <slot name="button" />
+    {hero.button && <Button>{hero.button}</Button>}
+  </div>
+  <div class="absolute bottom-0 left-0 right-0 flex justify-center py-8 z-10">
+    <a href="#first">
+      <img src={fleche.src} alt="flèche vers le bas" />
+    </a>
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const smoothLinks = document.querySelectorAll('a[href^="#"]');
+    const header = document.querySelector("header");
+
+    smoothLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        const href = link.getAttribute("href");
+        if (!href) return;
+        const targetElement = document.querySelector(href);
+
+        if (targetElement) {
+          const headerHeight = header ? header.offsetHeight : 0;
+          const targetPosition =
+            targetElement.getBoundingClientRect().top +
+            window.scrollY -
+            headerHeight;
+
+          window.scrollTo({
+            top: targetPosition,
+            behavior: "smooth",
+          });
+        }
+      });
+    });
+  });
+</script>

@@ -49,7 +49,18 @@ export async function getAllAnimators() {
 
 export async function getOneFilm(id) {
   await superAuth();
-  const record = await pb.collection("film").getOne(id);
+  const record = await pb
+    .collection("film")
+    .getOne(id, { expand: "realisateur, invite" });
+  record.affiche = pb.files.getURL(record, record.affiche);
+  record.expand.invite.photo = pb.files.getURL(
+    record.expand.invite,
+    record.expand.invite.photo
+  );
+  record.expand.realisateur.photo = pb.files.getURL(
+    record.expand.realisateur,
+    record.expand.realisateur.photo
+  );
   pb.authStore.clear();
   return record;
 }
@@ -91,4 +102,23 @@ export async function modifyAnyRecord(collection, id, data) {
   const record = await pb.collection(collection).update(id, data);
   pb.authStore.clear();
   return record;
+}
+
+export function formatDate(date) {
+  const d = new Date(date);
+
+  const dateString = d.toLocaleDateString("fr-FR", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
+  const timeString = `${d.getHours()}h${d
+    .getMinutes()
+    .toString()
+    .padStart(2, "0")}`;
+
+  const year = d.getFullYear();
+  return { date: dateString, heure: timeString, year: year };
 }

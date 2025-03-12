@@ -1,0 +1,31 @@
+---
+import { getOneFilm, formatDate } from "../../backend/backend.mjs";
+import Button from "./Button.astro";
+
+const props = Astro.props;
+let filmId = props.film.id;
+let date = formatDate(props.film.date_projection);
+
+let film = await getOneFilm(filmId);
+---
+
+<div
+  class="bg-white flex-col gap-4 w-[70dvw] h-[70dvh] md:w-[40dvw] lg:w-[25dvw] max-w-[300px] md:max-w-auto lg:max-w-auto rounded-sm shadow-md snap-center flex-shrink-0"
+>
+  <img
+    src={film.affiche}
+    alt={`affiche ${film.titre}`}
+    class="h-2/3 w-full max-w-[300px] object-top object-cover"
+  />
+  <div class="px-4 py-2 flex flex-col justify-between h-1/3 gap-4">
+    <h3 class="uppercase">{film.titre}</h3>
+    <p>{date.date} - {date.heure}</p>
+    <div
+      class="self-center w-full flex justify-center items-center bg-(--color-dark-blue) rounded-sm"
+    >
+      <Button>
+        <a href={`/film/${film.id}`}>En savoir plus</a>
+      </Button>
+    </div>
+  </div>
+</div>

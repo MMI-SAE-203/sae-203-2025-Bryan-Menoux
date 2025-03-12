@@ -1,11 +1,21 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import heroImg from "../assets/malsaucy_2.webp";
-import Hero from "../components/Hero.astro";
+import Carousel from "../components/Carousel.astro";
+
+import { getFilmsByDate } from "../../backend/backend.mjs";
+
+let films = await getFilmsByDate();
+
+let hero = {
+  title: "Programme",
+  description: "Découvrez la programmation du festival Cinénature",
+  heroImg: "",
+  heroImgLg: "",
+};
 ---
 
-<Layout>
-  <Hero heroImg={heroImg.src}>
-    <h1 slot="title">La programmation</h1>
-  </Hero>
+<Layout hero={hero}>
+  <div id="first">
+    <Carousel films={films} />
+  </div>
 </Layout>

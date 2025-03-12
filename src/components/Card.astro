@@ -1,12 +1,19 @@
----
-import { getOneFilm } from "../../backend/backend.mjs";
+<article
+  class="px-4 lg:px-0 flex flex-col lg:flex-row lg:gap-6 text-(--color-dark-green)"
+>
+  <div class="flex justify-center items-center lg:w-[70dvw]">
+    <slot name="image" />
+  </div>
+  <div class="flex flex-col lg:w-fit py-4 lg:py-8 gap-4 lg:gap-8">
+    <h2>
+      <slot name="title" />
+    </h2>
+    <p class="mr-4">
+      <slot name="chapo" />
+    </p>
 
-let film = getOneFilm();
-console.log(film);
----
-
-<div>
-  <h3></h3>
-  <p></p>
-</div>
-<!-- temp -->
+    <div class="self-end lg:self-start">
+      <slot name="button" />
+    </div>
+  </div>
+</article>

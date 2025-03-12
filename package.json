@@ -9,9 +9,12 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/alpinejs": "^0.4.3",
     "@fontsource-variable/montserrat": "^5.2.5",
     "@fontsource/poppins": "^5.2.5",
     "@tailwindcss/vite": "^4.0.12",
+    "@types/alpinejs": "^3.13.11",
+    "alpinejs": "^3.14.8",
     "astro": "^5.4.2"
   },
   "description": "[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/_DENqoZ4)\r Nom: \r Prenom: \r URL netlify:",

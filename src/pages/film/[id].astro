@@ -1,0 +1,76 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getOneFilm } from "../../../backend/backend.mjs";
+import { formatDate } from "../../../backend/backend.mjs";
+
+const id = Astro.params.id;
+let film = await getOneFilm(id);
+const date = formatDate(film.annee_sortie);
+
+const hero = {
+  title: film.titre,
+  affiche: film.affiche,
+};
+---
+
+<Layout hero={hero}>
+  <div
+    class="flex flex-col items-center md:flex-row lg:items-start shadow-xl rounded-lg gap-4 lg:gap-8 bg-white w-[80dvw] md:w-auto self-center text-(--color-dark-green)"
+  >
+    <img
+      src={film.affiche}
+      alt=`affiche du film ${film.titre}`
+      class="w-full max-h-[60dvh] lg:h-[60dvh] object-cover"
+    />
+    <div class="px-4 py-8 flex flex-col gap-4 lg:gap-8">
+      <h2>{film.titre}</h2>
+      <div>
+        <p>
+          {film.expand?.realisateur.nom}
+          {film.expand?.realisateur.prenom}, {date.year}, Durée : {film.duree} min
+        </p>
+      </div>
+      <p>{film.description}</p>
+    </div>
+  </div>
+  <div
+    class="flex flex-col md:flex-row h-full w-[80dvw] md:w-auto bg-white shadow-xl rounded-lg self-center md:max-h-[70dvh] text-(--color-dark-green)"
+  >
+    <img
+      src={film.expand?.realisateur.photo}
+      alt=`Photographie de ${film.expand?.realisateur.nom} ${film.expand?.realisateur.prenom}`
+      class="md:min-h-full max-h-[70dvw] md:max-h-auto max-w-full md:max-w-[35dvw] object-cover object-top"
+    />
+    <div class="flex flex-col gap-4 lg:gap-8 p-4 lg:p-8">
+      <h3>Réalisateur</h3>
+      <p>
+        {film.expand?.realisateur.nom}
+        {film.expand?.realisateur.prenom}
+      </p>
+      <p>{film.expand?.realisateur.biographie}</p>
+    </div>
+  </div>
+  <div
+    class="flex flex-col md:flex-row h-full w-[80dvw] md:w-auto bg-white shadow-xl rounded-lg self-center md:max-h-[70dvh] text-(--color-dark-green)"
+  >
+    <img
+      src={film.expand?.invite.photo}
+      alt=`Photographie de ${film.expand?.invite.nom} ${film.expand?.invite.prenom}`
+      class="md:min-h-full max-h-[70dvw] md:max-h-auto max-w-full md:max-w-[35dvw] object-cover object-top"
+    />
+    <div class="flex flex-col gap-4 lg:gap-8 p-4 lg:p-8">
+      <h3>Invité(e)</h3>
+      <p>
+        <span class="font-bold"
+          >{film.expand?.invite.nom}
+          {film.expand?.invite.prenom}</span
+        > sera présent(e) pour une rencontre exceptionnelle autour de son film
+      </p>
+      {
+        film.expand?.invite.nom != film.expand?.realisateur.nom && (
+          <p>{film.expand?.invite.biographie}</p>
+        )
+      }
+    </div>
+  </div>
+</Layout>
