@@ -1,1 +1,26 @@
-<div class="h-screen bg-red-500"></div>
+---
+import footerMobileImg from "../assets/footer_mobile_popcorn.svg";
+import footerDesktopImg from "../assets/footer_desktop_popcorn.svg";
+---
+
+<footer class="relative flex flex-col">
+  <img
+    src={footerMobileImg.src}
+    class="object-cover object-top min-w-full max-h-[60dvw] block md:hidden"
+  />
+  <img
+    src={footerDesktopImg.src}
+    class="object-cover object-top min-w-full h-[20dvw] md:block hidden"
+  />
+  <div class="w-full bg-(--color-green) flex flex-col gap-4 px-6 py-12">
+    <ul>
+      <li><a href="/contact">Contact</a></li>
+      <li>
+        <a href="/politique-de-confidentialite">Politique de confidentialite</a>
+      </li>
+      <li><a href="/mentions-legales">Mentions légales</a></li>
+    </ul>
+    <div></div>
+    <div></div>
+  </div>
+</footer>
