@@ -1,8 +1,8 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { getFilmByGenre } from "../../../backend/backend.mjs";
-import CardFilm from "../../components/CardFilm.astro";
 import Carousel from "../../components/Carousel.astro";
+import GenreSelector from "../../components/GenreSelector.astro";
 
 const genre = Astro.params.genre;
 let films = await getFilmByGenre(genre);
@@ -16,5 +16,6 @@ const hero = {
 ---
 
 <Layout hero={hero}>
+  <GenreSelector films={films} />
   <Carousel films={films} />
 </Layout>

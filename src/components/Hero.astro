@@ -48,7 +48,13 @@ let heroImgLg = hero.heroImgLg ?? heroImg;
       <p>{hero.description}</p>
       <p>{hero.date}</p>
     </div>
-    {hero.button && <Button>{hero.button}</Button>}
+    {
+      hero.button && (
+        <Button>
+          <a href="/programme/">{hero.button}</a>
+        </Button>
+      )
+    }
   </div>
   <div class="absolute bottom-0 left-0 right-0 flex justify-center py-8 z-10">
     <a href="#first">

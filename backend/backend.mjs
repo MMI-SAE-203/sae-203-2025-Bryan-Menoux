@@ -87,6 +87,7 @@ export async function getOneActivite(id) {
 export async function getOneInvite(id) {
   await superAuth();
   const record = await pb.collection("invite").getOne(id);
+  record.photo = pb.files.getURL(record, record.photo);
   pb.authStore.clear();
   return record;
 }

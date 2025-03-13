@@ -6,29 +6,37 @@ import Button from "../../components/Button.astro";
 let invites = await getAllInvites();
 
 const hero = {
-  title: "Invitation",
-  description: "Voici la liste complète des invités",
+  title: "Nos Invités",
+  description: "Découvrez les intervenants du festival Cinénature",
   heroImg: "",
   heroImgLg: "",
 };
 ---
 
 <Layout hero={hero}>
-  <div id="first" class="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+  <div
+    id="first"
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-6"
+  >
     {
       invites.map((invite) => (
-        <div class="flex flex-row md:flex-col items-center gap-8 bg-white px-2 py-4 rounded-lg shadow-lg">
+        <div class="flex flex-col items-center gap-4 bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
           <img
             src={invite.photo}
-            alt=`Photo de ${invite.nom}`
-            class="h-[50dvw] md:h-[40dvw] w-1/2 md:w-full rounded-lg object-cover object-center"
+            alt={`Photo de ${invite.nom} ${invite.prenom}`}
+            class="h-48 w-48 rounded-full object-cover border-4 border-gray-200 shadow-md"
           />
-          <div class="flex flex-col gap-4">    
-            <h2 class="text-2xl font-bold">{invite.nom} {invite.prenom}</h2>
-          <Button>
-            <a href=`/invite/${invite.id}`>En savoir plus</a>
-          </Button>
+          <div class="text-center">
+            <h2 class="text-xl font-bold text-gray-800">
+              {invite.nom} {invite.prenom}
+            </h2>
+            <p class="text-sm text-gray-600 font-semibold">{invite.role}</p>
           </div>
+          <Button>
+            <a href={`/invite/${invite.id}`} class="text-white">
+              En savoir plus
+            </a>
+          </Button>
         </div>
       ))
     }

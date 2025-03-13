@@ -1,10 +1,32 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Carousel from "../../components/Carousel.astro";
+import GenreSelector from "../../components/GenreSelector.astro";
 
-import { getFilmsByDate } from "../../../backend/backend.mjs";
+import {
+  formatDate,
+  getFilmsByDate,
+  getActivitesByDate,
+} from "../../../backend/backend.mjs";
+import CardFilm from "../../components/CardFilm.astro";
 
 let films = await getFilmsByDate();
+films = films.map((film) => {
+  return {
+    ...film,
+    date_projection: formatDate(film.date_projection),
+  };
+});
+
+let activites = await getActivitesByDate();
+activites = activites.map((activite) => {
+  return {
+    ...activite,
+    date: formatDate(activite.date_activite),
+  };
+});
+
+let dates = [...new Set(films.map((film) => film.date_projection.date))];
 
 let hero = {
   title: "Programme",
@@ -15,46 +37,57 @@ let hero = {
 ---
 
 <Layout hero={hero}>
-  <div id="first">
-    <div
-      class="flex justify-between items-center gap-4 md:max-w-[50dvw] md:gap-8"
-    >
-      <select
-        name="genre"
-        id="genre"
-        class="py-2 px-4 border-b border-(--color-green) focus:outline-[0.5px] focus:border-(--color-green) focus:ring-0 focus:rounded-lg w-full"
-      >
-        {
-          films
-            .map((film) => film.genre[0])
-            .concat(films.map((film) => film.genre[1]))
-            .filter(
-              (genre, index, self) => genre && self.indexOf(genre) === index
-            )
-            .map((genre) => <option value={genre}>{genre}</option>)
-        }
-      </select>
-      <button
-        class="button-filter px-4 py-2 rounded-lg bg-(--color-green) text-white uppercase font-bold"
-        >Filtrer</button
-      >
-    </div>
+  <div id="first" class="px-6 md:px-12">
+    <GenreSelector />
     <Carousel films={films} />
   </div>
+
+  <div class="text-green-700 text-center my-12">
+    <h2 class="text-3xl font-bold">À propos du festival</h2>
+    <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+      Le festival Cinénature est un festival de cinéma qui met en avant les
+      films documentaires sur la nature et l'environnement. Il se déroule chaque
+      année au mois de juin à la Cité des sciences et de l'industrie à Paris. Le
+      festival propose des projections de films, des rencontres avec des
+      réalisateurs, des conférences et des ateliers pour les enfants.
+    </p>
+  </div>
+
+  <div class="flex flex-col gap-12 lg:gap-24">
+    {
+      dates.map((date) => (
+        <div class="flex flex-col items-center gap-6 bg-gray-50 p-6 rounded-lg shadow-md">
+          <h3 class="text-2xl font-bold text-green-700">
+            Programmation du {date}
+          </h3>
+          <div class="flex flex-wrap justify-center gap-6">
+            {films
+              .filter((film) => film.date_projection.date === date)
+              .map((film) => (
+                <CardFilm film={film} />
+              ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="flex flex-col gap-12 lg:gap-24">
+    <h2 class="text-3xl font-bold text-green-700 text-center">Activités</h2>
+    <div class="flex flex-col gap-8">
+      {
+        activites.map((activite) => (
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-all">
+            <h4 class="text-xl font-semibold text-gray-800">
+              {activite.titre}
+            </h4>
+            <p class="text-gray-600">{activite.description}</p>
+            <p class="text-sm text-gray-500">
+              {activite.date.date} - {activite.date.heure}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
 </Layout>
-
-<script>
-  const inputGenre = document.getElementById("genre") as HTMLSelectElement;
-  const buttonFilter = document.querySelector(
-    ".button-filter"
-  ) as HTMLButtonElement;
-  let genre = inputGenre.value;
-
-  inputGenre.addEventListener("change", () => {
-    genre = inputGenre.value;
-    console.log(genre);
-  });
-  buttonFilter.addEventListener("click", () => {
-    window.location.href = `/programme/${genre}`;
-  });
-</script>
