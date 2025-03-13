@@ -2,7 +2,7 @@ import { e as createComponent, f as createAstro, m as maybeRenderHead, h as addA
 import 'kleur/colors';
 import 'html-escaper';
 import { a as getOneFilm, f as formatDate, e as getFilmsByDate } from './backend_CkmBqhTo.mjs';
-import { a as $$Button } from './Layout_Dy1rCzIv.mjs';
+import { a as $$Button } from './Layout_Cd7jAVUF.mjs';
 import 'clsx';
 
 const $$Astro$1 = createAstro();

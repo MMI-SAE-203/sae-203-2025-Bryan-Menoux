@@ -1,8 +1,8 @@
 import { e as createComponent, i as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_BqO5gSP-.mjs';
 import 'kleur/colors';
 import 'html-escaper';
-import { $ as $$Layout } from '../chunks/Layout_Dy1rCzIv.mjs';
-import { $ as $$GenreSelector, a as $$Carousel, b as $$CardFilm } from '../chunks/GenreSelector_e43laMoC.mjs';
+import { $ as $$Layout } from '../chunks/Layout_Cd7jAVUF.mjs';
+import { $ as $$GenreSelector, a as $$Carousel, b as $$CardFilm } from '../chunks/GenreSelector_DCL2GVja.mjs';
 import { e as getFilmsByDate, f as formatDate, g as getActivitesByDate } from '../chunks/backend_CkmBqhTo.mjs';
 export { renderers } from '../renderers.mjs';
 

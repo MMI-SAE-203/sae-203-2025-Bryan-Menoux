@@ -1,14 +1,14 @@
 import { e as createComponent, i as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_BqO5gSP-.mjs';
 import 'kleur/colors';
 import 'html-escaper';
-import { $ as $$Layout } from '../chunks/Layout_Dy1rCzIv.mjs';
+import { $ as $$Layout } from '../chunks/Layout_Cd7jAVUF.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Contact = createComponent(($$result, $$props, $$slots) => {
   const hero = {
     title: "Contact"
   };
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "hero": hero, "title": "Contact" }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<div class="max-w-4xl mx-auto px-4 py-8 space-y-12 flex flex-col gap-8"> <section class="bg-white shadow-lg rounded-xl p-6 md:p-8 text-center"> <h2 class="text-2xl font-bold mb-6 text-(--color-dark-green)">
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "hero": hero, "title": "Contact" }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<div id="first" class="max-w-4xl mx-auto px-4 py-8 space-y-12 flex flex-col gap-8"> <section class="bg-white shadow-lg rounded-xl p-6 md:p-8 text-center"> <h2 class="text-2xl font-bold mb-6 text-(--color-dark-green)">
 Contactez-nous
 </h2> <p class="text-gray-700 leading-relaxed max-w-2xl mx-auto mb-8">
 Nous sommes à votre disposition pour répondre à toutes vos questions ou

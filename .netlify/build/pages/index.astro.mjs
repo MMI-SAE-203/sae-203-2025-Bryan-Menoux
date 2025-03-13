@@ -1,7 +1,7 @@
 import { e as createComponent, m as maybeRenderHead, k as renderSlot, r as renderTemplate, i as renderComponent, h as addAttribute } from '../chunks/astro/server_BqO5gSP-.mjs';
 import 'kleur/colors';
 import 'html-escaper';
-import { $ as $$Layout, a as $$Button } from '../chunks/Layout_Dy1rCzIv.mjs';
+import { $ as $$Layout, a as $$Button } from '../chunks/Layout_Cd7jAVUF.mjs';
 import 'clsx';
 export { renderers } from '../renderers.mjs';
 

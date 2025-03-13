@@ -9,9 +9,9 @@ let heroImgLg = hero.heroImgLg ?? heroImg;
 
 <div
   class={(heroImg
-    ? "h-full bg-transparent"
+    ? "h-full bg-transparent max-h-[100dvh]"
     : "bg-(--color-green) max-h-[45dvh] lg:max-h-[70dvh] items-start") +
-    " hero relative h-screen text-white flex flex-col"}
+    " hero relative h-screen  text-white flex flex-col"}
 >
   <div
     class={(heroImg ? "absolute h-screen inset-0 -z-10" : "relative h-0") +
@@ -58,7 +58,7 @@ let heroImgLg = hero.heroImgLg ?? heroImg;
       )
     }
   </div>
-  <div class="absolute bottom-0 left-0 right-0 flex justify-center py-8 z-10">
+  <div class="absolute bottom-6 left-0 right-0 flex justify-center py-8 z-10">
     <a href="#first">
       <img src={fleche.src} alt="flèche vers le bas" />
     </a>

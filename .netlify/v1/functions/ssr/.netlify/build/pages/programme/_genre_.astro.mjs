@@ -1,9 +1,9 @@
-import { e as createComponent, f as createAstro, i as renderComponent, r as renderTemplate } from '../../chunks/astro/server_BqO5gSP-.mjs';
+import { e as createComponent, f as createAstro, i as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../../chunks/astro/server_BqO5gSP-.mjs';
 import 'kleur/colors';
 import 'html-escaper';
-import { $ as $$Layout } from '../../chunks/Layout_Dy1rCzIv.mjs';
+import { $ as $$Layout } from '../../chunks/Layout_Cd7jAVUF.mjs';
 import { d as getFilmByGenre } from '../../chunks/backend_CkmBqhTo.mjs';
-import { $ as $$GenreSelector, a as $$Carousel } from '../../chunks/GenreSelector_e43laMoC.mjs';
+import { $ as $$GenreSelector, a as $$Carousel } from '../../chunks/GenreSelector_DCL2GVja.mjs';
 export { renderers } from '../../renderers.mjs';
 
 const $$Astro = createAstro();
@@ -18,7 +18,7 @@ const $$genre = createComponent(async ($$result, $$props, $$slots) => {
     heroImg: "",
     heroImgLg: ""
   };
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "hero": hero, "title": genre }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "GenreSelector", $$GenreSelector, { "films": films })} ${renderComponent($$result2, "Carousel", $$Carousel, { "films": films })} ` })}`;
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "hero": hero, "title": genre }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<div id="first"> ${renderComponent($$result2, "GenreSelector", $$GenreSelector, { "films": films })} ${renderComponent($$result2, "Carousel", $$Carousel, { "films": films })} </div> ` })}`;
 }, "C:/Users/Nekros/Documents/GitHub/R213_agence/sae-203-2025-Bryan-Menoux/src/pages/programme/[genre].astro", void 0);
 
 const $$file = "C:/Users/Nekros/Documents/GitHub/R213_agence/sae-203-2025-Bryan-Menoux/src/pages/programme/[genre].astro";

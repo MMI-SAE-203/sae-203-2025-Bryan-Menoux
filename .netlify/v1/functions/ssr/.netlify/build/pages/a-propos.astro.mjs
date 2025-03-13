@@ -1,7 +1,7 @@
 import { e as createComponent, i as renderComponent, r as renderTemplate, m as maybeRenderHead, h as addAttribute } from '../chunks/astro/server_BqO5gSP-.mjs';
 import 'kleur/colors';
 import 'html-escaper';
-import { $ as $$Layout } from '../chunks/Layout_Dy1rCzIv.mjs';
+import { $ as $$Layout } from '../chunks/Layout_Cd7jAVUF.mjs';
 import { m as map } from '../chunks/carte_DsA8ooxZ.mjs';
 export { renderers } from '../renderers.mjs';
 
@@ -9,7 +9,7 @@ const $$APropos = createComponent(($$result, $$props, $$slots) => {
   const hero = {
     title: "Lieu & Infos Pratiques"
   };
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "hero": hero, "title": "Lieu & Infos Pratiques" }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<div class="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-12"> <section class="bg-white shadow-md rounded-xl p-6 md:p-8 transition-all duration-300 hover:shadow-xl border-l-4 border-l-emerald-700"> <h2 class="text-2xl md:text-3xl font-bold mb-4 text-[color:var(--color-dark-green)] border-b border-gray-200 pb-3">
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "hero": hero, "title": "Lieu & Infos Pratiques" }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<div id="first" class="max-w-4xl mx-auto px-4 sm:px-6 py-12 space-y-12"> <section class="bg-white shadow-md rounded-xl p-6 md:p-8 transition-all duration-300 hover:shadow-xl border-l-4 border-l-emerald-700"> <h2 class="text-2xl md:text-3xl font-bold mb-4 text-[color:var(--color-dark-green)] border-b border-gray-200 pb-3">
 Lieu & Infos Pratiques
 </h2> <p class="text-gray-700 leading-relaxed text-base md:text-lg">
 Le Festival CinéNature se déroule sur la presqu'île du Malsaucy, un
