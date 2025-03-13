@@ -1,5 +1,5 @@
 import PocketBase from "pocketbase";
-export const pb = new PocketBase("http://127.0.0.1:8090");
+const pb = new PocketBase("https://pb-sae-203.bryan-menoux.fr:443");
 pb.autoCancellation(false);
 
 export async function superAuth() {
