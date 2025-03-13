@@ -30,11 +30,12 @@ const youtubeTrailerUrl = film.bande_annonce || null;
 const embedUrl = transformYoutubeLink(youtubeTrailerUrl);
 ---
 
-<Layout hero={hero}>
+<Layout hero={hero} title={film.titre}>
   <div
     class="flex flex-col items-center md:flex-row lg:items-start shadow-xl rounded-lg gap-4 lg:gap-8 bg-white w-[80dvw] md:w-auto self-center text-(--color-dark-green)"
   >
     <img
+      loading="lazy"
       src={film.affiche}
       alt=`affiche du film ${film.titre}`
       class="w-full max-h-[60dvh] lg:h-[60dvh] object-cover"
@@ -72,6 +73,7 @@ const embedUrl = transformYoutubeLink(youtubeTrailerUrl);
     class="flex flex-col md:flex-row h-full w-[80dvw] md:w-auto bg-white shadow-xl rounded-lg self-center md:max-h-[70dvh] text-(--color-dark-green)"
   >
     <img
+      loading="lazy"
       src={film.expand?.realisateur.photo}
       alt=`Photographie de ${film.expand?.realisateur.nom} ${film.expand?.realisateur.prenom}`
       class="md:min-h-full max-h-[70dvw] md:max-h-auto max-w-full md:max-w-[35dvw] object-cover object-top"
@@ -89,6 +91,7 @@ const embedUrl = transformYoutubeLink(youtubeTrailerUrl);
     class="flex flex-col md:flex-row h-full w-[80dvw] md:w-auto bg-white shadow-xl rounded-lg self-center md:max-h-[70dvh] text-(--color-dark-green)"
   >
     <img
+      loading="lazy"
       src={film.expand?.invite.photo}
       alt=`Photographie de ${film.expand?.invite.nom} ${film.expand?.invite.prenom}`
       class="md:min-h-full max-h-[70dvw] md:max-h-auto max-w-full md:max-w-[35dvw] object-cover object-top"

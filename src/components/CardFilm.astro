@@ -13,7 +13,8 @@ let date = formatDate(film.date_projection);
   class="bg-white flex-col gap-4 w-[70dvw] h-[70dvh] md:w-[40dvw] lg:w-[25dvw] max-w-[300px] md:max-w-auto lg:max-w-auto rounded-sm shadow-md snap-center flex-shrink-0 text-black"
 >
   <img
-    src={film.affiche}
+      loading="lazy"
+      src={film.affiche}
     alt={`affiche ${film.titre}`}
     class="h-2/3 w-full max-w-[300px] object-top object-cover"
   />

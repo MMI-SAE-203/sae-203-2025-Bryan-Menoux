@@ -24,7 +24,7 @@ let hero = {
 };
 ---
 
-<Layout hero={hero}>
+<Layout hero={hero} title="Accueil">
   <Card>
     <img
       id="first"
@@ -45,6 +45,7 @@ let hero = {
   </Card>
   <Card>
     <img
+      loading="lazy"
       slot="image"
       src={malsaucy.src}
       alt="photographie de la presqu'île du malsaucy"
@@ -62,6 +63,7 @@ let hero = {
   </Card>
   <Card>
     <img
+      loading="lazy"
       slot="image"
       src={ticket.src}
       alt="photographie de la presqu'île du malsaucy"
@@ -79,6 +81,7 @@ let hero = {
   </Card>
   <Card>
     <img
+      loading="lazy"
       slot="image"
       src={invite.src}
       alt="photographie de la presqu'île du malsaucy"
@@ -98,18 +101,22 @@ let hero = {
     class="grid grid-cols-2 gap-4 items-center justify-center px-8 md:grid-cols-4"
   >
     <img
+      loading="lazy"
       src={cinemaAujourdhui.src}
       alt="logo cinéma d'aujourd'hui"
       class="object-center object-contain h-full w-full"
     /><img
+      loading="lazy"
       src={territoireBelfort.src}
       alt="logo du territoire de belfort"
       class="object-center object-contain h-full w-full"
     /><img
+      loading="lazy"
       src={bourgogneFrancheCompte.src}
       alt="logo de la région bourgogne franche comté"
       class="object-center object-contain h-full w-full"
     /><img
+      loading="lazy"
       src={cnc.src}
       alt="logo du cnc"
       class="object-center object-contain h-full w-full"

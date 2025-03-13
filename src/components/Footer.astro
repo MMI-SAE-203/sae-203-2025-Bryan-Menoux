@@ -10,10 +10,12 @@ import tiktokIcon from "../assets/icons/tiktok.svg";
 
 <footer class="relative flex flex-col text-white">
   <img
+    loading="lazy"
     src={footerMobileImg.src}
     class="object-cover object-top min-w-full max-h-[60dvw] block md:hidden"
   />
   <img
+    loading="lazy"
     src={footerDesktopImg.src}
     class="object-cover object-top min-w-full h-[20dvw] md:block hidden"
   />
@@ -32,22 +34,22 @@ import tiktokIcon from "../assets/icons/tiktok.svg";
       <ul class="flex gap-2">
         <li>
           <a href="https://x.com/mmimontbeliard/" target="_blank"
-            ><img src={twitterIcon.src} alt="twitter" /></a
+            ><img loading="lazy" src={twitterIcon.src} alt="twitter" /></a
           >
         </li>
         <li>
           <a href="https://www.facebook.com/mmimontbeliard/" target="_blank"
-            ><img src={facebookIcon.src} alt="facebook" /></a
+            ><img loading="lazy" src={facebookIcon.src} alt="facebook" /></a
           >
         </li>
         <li>
           <a href="https://www.tiktok.com/@mmi_montbeliard" target="_blank"
-            ><img src={tiktokIcon.src} alt="tiktok" /></a
+            ><img loading="lazy" src={tiktokIcon.src} alt="tiktok" /></a
           >
         </li>
         <li>
           <a href="https://www.instagram.com/mmi_montbeliard/" target="_blank"
-            ><img src={instagramIcon.src} alt="instagram" /></a
+            ><img loading="lazy" src={instagramIcon.src} alt="instagram" /></a
           >
         </li>
       </ul>

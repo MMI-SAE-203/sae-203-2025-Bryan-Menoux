@@ -20,6 +20,7 @@ let heroImgLg = hero.heroImgLg ?? heroImg;
     {
       heroImg && (
         <img
+          loading="lazy"
           src={heroImg}
           alt="Hero Image"
           class="w-full h-full block lg:hidden"
@@ -29,6 +30,7 @@ let heroImgLg = hero.heroImgLg ?? heroImg;
     {
       heroImgLg && (
         <img
+          loading="lazy"
           src={heroImgLg}
           alt="Hero Image Large"
           class="w-full h-full hidden lg:block"

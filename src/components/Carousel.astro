@@ -24,6 +24,7 @@ let films = props.films;
   <div class="flex gap-4">
     <button id="prev" class="px-6 py-2 rounded-4xl bg-(--color-light-blue)"
       ><img
+        loading="lazy"
         src={fleche.src}
         alt="fleche gauche"
         class="w-12 rotate-90"
@@ -31,6 +32,7 @@ let films = props.films;
     >
     <button id="next" class="px-6 py-2 rounded-4xl bg-(--color-light-blue)"
       ><img
+        loading="lazy"
         src={fleche.src}
         alt="fleche droite"
         class="w-12 -rotate-90"
