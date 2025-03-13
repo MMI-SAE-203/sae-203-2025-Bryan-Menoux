@@ -1,0 +1,125 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Button from "../components/Button.astro";
+import heroImg from "../assets/malsaucy.webp";
+import heroImgLg from "../assets/malsaucy_2.webp";
+import Card from "../components/Card.astro";
+import malsaucy from "../assets/malsaucy_2.webp";
+import ticket from "../assets/ticket.webp";
+import invite from "../assets/invites.webp";
+import cinemaAujourdhui from "../assets/cinema_aujourdhui.webp";
+import territoireBelfort from "../assets/territoire_belfort.webp";
+import bourgogneFrancheCompte from "../assets/region_bourgogne_franche_comte.webp";
+import cnc from "../assets/cnc.webp";
+
+let hero = {
+  title: "CINÉNATURE",
+  description: "Festival de cinéma éco-responsable du territoire de Belfort",
+  date: "Du 5 au 8 juillet 2025",
+  button: "Voir la Programmation",
+  heroImg: heroImg.src,
+  heroImgLg: heroImgLg.src,
+  duotone: true,
+};
+---
+
+<Layout hero={hero} title="Accueil">
+  <Card>
+    <img
+      id="first"
+      slot="image"
+      src={malsaucy.src}
+      alt="photographie de la presqu'île du malsaucy"
+      class="object-center object-cover h-full w-full"
+    />
+    <span slot="title">Le Festival</span>
+    <span slot="chapo"
+      >Le Festival CinéNature, du 5 au 8 juillet 2025 sur la presqu’île du
+      Malsaucy près de Belfort, vous invite à une expérience cinématographique
+      en plein air. Ce festival célèbre la rencontre entre le cinéma engagé et
+      la nature, avec une programmation de films d’auteur et de documentaires
+      abordant des thématiques environnementales et sociétales.</span
+    >
+    <Button slot="button"><a href="/a-propos">En savoir plus</a></Button>
+  </Card>
+  <Card>
+    <img
+      loading="lazy"
+      slot="image"
+      src={malsaucy.src}
+      alt="photographie de la presqu'île du malsaucy"
+      class="object-center object-cover h-full w-full"
+    />
+    <span slot="title">Les activités</span>
+    <span slot="chapo"
+      >Le Festival CinéNature, du 5 au 8 juillet 2025 sur la presqu’île du
+      Malsaucy près de Belfort, vous invite à une expérience cinématographique
+      en plein air. Ce festival célèbre la rencontre entre le cinéma engagé et
+      la nature, avec une programmation de films d’auteur et de documentaires
+      abordant des thématiques environnementales et sociétales.</span
+    >
+    <Button slot="button"><a href="/activite">En savoir plus</a></Button>
+  </Card>
+  <Card>
+    <img
+      loading="lazy"
+      slot="image"
+      src={ticket.src}
+      alt="photographie de la presqu'île du malsaucy"
+      class="object-center object-cover h-full w-full"
+    />
+    <span slot="title">La billetterie</span>
+    <span slot="chapo"
+      >En plus des projections, CinéNature propose des ateliers, des rencontres
+      avec des réalisateurs, et des discussions autour de l’écologie. Le
+      festival s’engage à réduire son empreinte écologique en mettant en place
+      des pratiques éco-responsables et en collaborant avec des partenaires
+      locaux.</span
+    >
+    <Button slot="button"><a href="/billeterie">En savoir plus</a></Button>
+  </Card>
+  <Card>
+    <img
+      loading="lazy"
+      slot="image"
+      src={invite.src}
+      alt="photographie de la presqu'île du malsaucy"
+      class="object-center object-cover h-full w-full"
+    />
+    <span slot="title">Rencontrez nos invités d'exception !</span>
+    <span slot="chapo"
+      >Le Festival CinéNature met à l'honneur des réalisateurs, experts et
+      acteurs engagés qui partageront leur passion et leurs expériences. À
+      travers échanges exclusifs et débats inspirants, découvrez des regards
+      uniques sur le cinéma et l’écologie. Vivez des rencontres
+      inoubliables avec ces personnalités qui font vibrer l'âme du festival.</span
+    >
+    <Button slot="button"><a href="/invite">En savoir plus</a></Button>
+  </Card>
+  <article
+    class="grid grid-cols-2 gap-4 items-center justify-center px-8 md:grid-cols-4"
+  >
+    <img
+      loading="lazy"
+      src={cinemaAujourdhui.src}
+      alt="logo cinéma d'aujourd'hui"
+      class="object-center object-contain h-full w-full"
+    /><img
+      loading="lazy"
+      src={territoireBelfort.src}
+      alt="logo du territoire de belfort"
+      class="object-center object-contain h-full w-full"
+    /><img
+      loading="lazy"
+      src={bourgogneFrancheCompte.src}
+      alt="logo de la région bourgogne franche comté"
+      class="object-center object-contain h-full w-full"
+    /><img
+      loading="lazy"
+      src={cnc.src}
+      alt="logo du cnc"
+      class="object-center object-contain h-full w-full"
+    />
+  </article>
+</Layout>
