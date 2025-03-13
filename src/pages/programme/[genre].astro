@@ -1,0 +1,20 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getFilmByGenre } from "../../../backend/backend.mjs";
+import CardFilm from "../../components/CardFilm.astro";
+import Carousel from "../../components/Carousel.astro";
+
+const genre = Astro.params.genre;
+let films = await getFilmByGenre(genre);
+
+const hero = {
+  title: genre,
+  description: `Découvrez les films du genre ${genre}`,
+  heroImg: "",
+  heroImgLg: "",
+};
+---
+
+<Layout hero={hero}>
+  <Carousel films={films} />
+</Layout>

@@ -9,6 +9,7 @@ import {
   getInviteActivitiesById,
   getInviteActivitiesByName,
   modifyAnyRecord,
+  getFilmByGenre,
 } from "./backend.mjs";
 
 try {
@@ -97,6 +98,15 @@ try {
     titre: "La Quête du Sens",
   };
   const records = await modifyAnyRecord("film", "50tp411r9yz7p0s", data);
+  console.log(records);
+} catch (error) {
+  console.error("error", error);
+}
+
+console.log("--------------------------");
+
+try {
+  const records = await getFilmByGenre("Science");
   console.log(records);
 } catch (error) {
   console.error("error", error);

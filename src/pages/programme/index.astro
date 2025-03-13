@@ -1,0 +1,60 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Carousel from "../../components/Carousel.astro";
+
+import { getFilmsByDate } from "../../../backend/backend.mjs";
+
+let films = await getFilmsByDate();
+
+let hero = {
+  title: "Programme",
+  description: "Découvrez la programmation du festival Cinénature",
+  heroImg: "",
+  heroImgLg: "",
+};
+---
+
+<Layout hero={hero}>
+  <div id="first">
+    <div
+      class="flex justify-between items-center gap-4 md:max-w-[50dvw] md:gap-8"
+    >
+      <select
+        name="genre"
+        id="genre"
+        class="py-2 px-4 border-b border-(--color-green) focus:outline-[0.5px] focus:border-(--color-green) focus:ring-0 focus:rounded-lg w-full"
+      >
+        {
+          films
+            .map((film) => film.genre[0])
+            .concat(films.map((film) => film.genre[1]))
+            .filter(
+              (genre, index, self) => genre && self.indexOf(genre) === index
+            )
+            .map((genre) => <option value={genre}>{genre}</option>)
+        }
+      </select>
+      <button
+        class="button-filter px-4 py-2 rounded-lg bg-(--color-green) text-white uppercase font-bold"
+        >Filtrer</button
+      >
+    </div>
+    <Carousel films={films} />
+  </div>
+</Layout>
+
+<script>
+  const inputGenre = document.getElementById("genre") as HTMLSelectElement;
+  const buttonFilter = document.querySelector(
+    ".button-filter"
+  ) as HTMLButtonElement;
+  let genre = inputGenre.value;
+
+  inputGenre.addEventListener("change", () => {
+    genre = inputGenre.value;
+    console.log(genre);
+  });
+  buttonFilter.addEventListener("click", () => {
+    window.location.href = `/programme/${genre}`;
+  });
+</script>

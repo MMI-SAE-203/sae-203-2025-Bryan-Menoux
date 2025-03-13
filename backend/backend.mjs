@@ -27,6 +27,18 @@ export async function getActivitesByDate() {
   return record;
 }
 
+export async function getAllInvites() {
+  await superAuth();
+  const records = await pb.collection("invite").getFullList({
+    sort: "nom",
+  });
+  records.forEach((record) => {
+    record.photo = pb.files.getURL(record, record.photo);
+  });
+  pb.authStore.clear();
+  return records;
+}
+
 export async function getAllDirectorAndActors() {
   await superAuth();
   const records = await pb.collection("invite").getFullList({
@@ -121,4 +133,14 @@ export function formatDate(date) {
 
   const year = d.getFullYear();
   return { date: dateString, heure: timeString, year: year };
+}
+
+export async function getFilmByGenre(genre) {
+  await superAuth();
+  let records = await pb.collection("film").getFullList({});
+  records = records.filter(
+    (record) => record.genre[0] === genre || record.genre[1] === genre
+  );
+  pb.authStore.clear();
+  return records;
 }

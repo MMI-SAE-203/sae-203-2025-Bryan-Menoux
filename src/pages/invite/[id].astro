@@ -1,0 +1,15 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getOneInvite } from "../../../backend/backend.mjs";
+
+const invite = await getOneInvite(Astro.params.id);
+---
+
+<Layout>
+  <div
+    id="first"
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center gap-8"
+  >
+    <h2>{invite.nom}</h2>
+  </div>
+</Layout>

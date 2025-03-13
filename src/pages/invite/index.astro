@@ -1,0 +1,36 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getAllInvites } from "../../../backend/backend.mjs";
+import Button from "../../components/Button.astro";
+
+let invites = await getAllInvites();
+
+const hero = {
+  title: "Invitation",
+  description: "Voici la liste complète des invités",
+  heroImg: "",
+  heroImgLg: "",
+};
+---
+
+<Layout hero={hero}>
+  <div id="first" class="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+    {
+      invites.map((invite) => (
+        <div class="flex flex-row md:flex-col items-center gap-8 bg-white px-2 py-4 rounded-lg shadow-lg">
+          <img
+            src={invite.photo}
+            alt=`Photo de ${invite.nom}`
+            class="h-[50dvw] md:h-[40dvw] w-1/2 md:w-full rounded-lg object-cover object-center"
+          />
+          <div class="flex flex-col gap-4">    
+            <h2 class="text-2xl font-bold">{invite.nom} {invite.prenom}</h2>
+          <Button>
+            <a href=`/invite/${invite.id}`>En savoir plus</a>
+          </Button>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</Layout>
