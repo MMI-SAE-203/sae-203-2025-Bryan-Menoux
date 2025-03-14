@@ -1,2 +1,2 @@
-mail : admin@admin.com 
+Email : admin@admin.com 
 mdp :OO6FN9qKv81QxvM
