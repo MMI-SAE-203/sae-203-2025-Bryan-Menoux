@@ -31,6 +31,9 @@
   .text-button {
     @apply text-xs;
   }
+  li {
+    @apply text-base md:text-lg lg:text-xl;
+  }
 }
 
 @layer components {

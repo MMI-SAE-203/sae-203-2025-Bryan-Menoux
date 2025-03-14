@@ -13,16 +13,18 @@ import tiktokIcon from "../assets/icons/tiktok.svg";
     loading="lazy"
     src={footerMobileImg.src}
     class="object-cover object-top min-w-full max-h-[60dvw] block md:hidden"
+    alt="popcorn illustration"
   />
   <img
     loading="lazy"
     src={footerDesktopImg.src}
     class="object-cover object-top min-w-full h-[20dvw] md:block hidden"
+    alt="popcorn illustration"
   />
   <div
     class="w-full bg-(--color-green) grid grid-cols-1 md:grid-cols-2 gap-y-8 px-6 py-12 lg:px-48 lg:pb-24 lg: gap-x-24"
   >
-    <ul>
+    <ul class="flex flex-col gap-4">
       <li><a href="/contact">Contact</a></li>
       <li>
         <a href="/politique-de-confidentialite">Politique de confidentialite</a>
@@ -30,7 +32,7 @@ import tiktokIcon from "../assets/icons/tiktok.svg";
       <li><a href="/mentions-legales">Mentions légales</a></li>
     </ul>
     <div class="flex flex-col gap-2">
-      <h4>Nous Suivre</h4>
+      <h3>Nous suivre</h3>
       <ul class="flex gap-2">
         <li>
           <a href="https://x.com/mmimontbeliard/" target="_blank"
@@ -55,7 +57,7 @@ import tiktokIcon from "../assets/icons/tiktok.svg";
       </ul>
     </div>
     <div class="flex flex-col md:col-span-2 gap-2">
-      <h4>S'inscrire à la Newsletter</h4>
+      <h3>S'inscrire à la Newsletter</h3>
       <form action="" class="flex flex-wrap gap-x-8 gap-y-2 items-center">
         <label for="email" class="sr-only">Votre adresse email</label>
         <input

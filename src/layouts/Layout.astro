@@ -10,6 +10,10 @@ import "@fontsource-variable/montserrat";
 import "@fontsource/poppins";
 
 const props = Astro.props;
+
+const metaDescription =
+  props.metaDescription ||
+  "Festival CinéNature : Une célébration du cinéma écologique et de la nature à travers des projections, ateliers participatifs et rencontres avec des réalisateurs engagés pour l'environnement.";
 ---
 
 <html lang="en">
@@ -18,8 +22,8 @@ const props = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={metaDescription} />
     <link rel="stylesheet" href="/src/styles/global.css" />
-
     <link rel="icon" href={icon.src} />
     <title>CINENATURE - {props.title}</title>
   </head>

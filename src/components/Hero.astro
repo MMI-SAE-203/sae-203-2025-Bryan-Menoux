@@ -23,7 +23,9 @@ let heroImgLg = hero.heroImgLg ?? heroImg;
           loading="lazy"
           src={heroImg}
           alt="Hero Image"
-          class="w-full h-full block lg:hidden"
+          class="w-full h-full object-cover block lg:hidden"
+          width="1200"
+          height="800"
         />
       )
     }
@@ -33,7 +35,9 @@ let heroImgLg = hero.heroImgLg ?? heroImg;
           loading="lazy"
           src={heroImgLg}
           alt="Hero Image Large"
-          class="w-full h-full hidden lg:block"
+          class="w-full h-full object-cover hidden lg:block"
+          width="1920"
+          height="1080"
         />
       )
     }
@@ -60,7 +64,13 @@ let heroImgLg = hero.heroImgLg ?? heroImg;
   </div>
   <div class="absolute bottom-6 left-0 right-0 flex justify-center py-8 z-10">
     <a href="#first">
-      <img src={fleche.src} alt="flèche vers le bas" />
+      <img
+        src={fleche.src}
+        alt="flèche vers le bas"
+        width="104"
+        height="104"
+        class="w-auto h-auto"
+      />
     </a>
   </div>
 </div>
