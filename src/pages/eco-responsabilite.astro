@@ -1,0 +1,354 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import malsaucy from "../assets/malsaucy_2.webp";
+import cinemaAujourdhui from "../assets/cinema_aujourdhui.webp";
+import territoireBelfort from "../assets/territoire_belfort.webp";
+import bourgogneFrancheCompte from "../assets/region_bourgogne_franche_comte.webp";
+import cnc from "../assets/cnc.webp";
+
+const hero = {
+  title: "Éco-responsabilité",
+};
+---
+
+<Layout hero={hero} title="Éco-responsabilité">
+  <div
+    id="first"
+    class="max-w-4xl mx-auto px-4 py-8 space-y-12 flex flex-col gap-8"
+  >
+    <section class="bg-white shadow-lg rounded-xl p-6 md:p-8 text-center">
+      <h2 class="text-2xl font-bold mb-6 text-(--color-dark-green)">
+        Notre engagement éco-responsable
+      </h2>
+      <p class="text-gray-700 leading-relaxed max-w-2xl mx-auto mb-8">
+        Au Festival CinéNature, nous croyons en un cinéma engagé dans la
+        protection de l'environnement, non seulement par les films projetés,
+        mais aussi par notre organisation. Nous avons développé une approche
+        éco-responsable qui s'applique à tous les aspects du festival : de la
+        logistique à la restauration, en passant par les déchets et notre
+        communication.
+      </p>
+      <div class="flex justify-center">
+        <img
+          src={malsaucy.src}
+          alt="Presqu'île du Malsaucy"
+          class="w-full max-w-md rounded-lg shadow-md"
+        />
+      </div>
+    </section>
+
+    <section class="bg-white shadow-lg rounded-xl p-6 md:p-8">
+      <h2
+        class="text-2xl font-bold mb-6 text-(--color-dark-green) border-b pb-2"
+      >
+        Nos actions éco-responsables
+      </h2>
+
+      <div class="space-y-8 mt-6">
+        <div class="flex flex-col md:flex-row gap-6">
+          <div
+            class="md:w-1/4 flex flex-col items-center justify-center text-center"
+          >
+            <div
+              class="bg-(--color-dark-green) p-4 rounded-full mb-3 w-16 h-16 flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-10 w-10 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg text-(--color-dark-green) w-full">
+              Charte éco-responsable
+            </h3>
+          </div>
+          <div class="md:w-3/4">
+            <p class="text-gray-700 mb-4">
+              Notre charte éco-responsable guide toutes nos actions. Elle
+              représente notre engagement envers l'environnement et la manière
+              dont nous opérons. Elle établit des objectifs clairs et des moyens
+              de les atteindre, ainsi que des indicateurs pour mesurer notre
+              impact.
+            </p>
+            <p class="text-gray-700">
+              Nous invitons tous nos partenaires, fournisseurs et bénévoles à
+              adhérer à cette charte afin de créer un événement véritablement
+              durable.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-6">
+          <div
+            class="md:w-1/4 flex flex-col items-center justify-center text-center"
+          >
+            <div
+              class="bg-(--color-dark-green) p-4 rounded-full mb-3 w-16 h-16 flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-10 w-10 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v10M9 7v10m10-10v10M4 7h16"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg text-(--color-dark-green) w-full">
+              Gestion des Déchets
+            </h3>
+          </div>
+          <div class="md:w-3/4">
+            <p class="text-gray-700 mb-4">
+              Nous mettons en place un système de tri sélectif efficace sur tout
+              le site du festival. Des points de collecte clairement identifiés
+              sont disposés stratégiquement pour faciliter le tri des déchets.
+            </p>
+            <p class="text-gray-700">
+              Notre objectif est de réduire au maximum notre production de
+              déchets et d'atteindre un taux de recyclage de 90%. Nous
+              travaillons avec des associations locales pour valoriser les
+              déchets organiques par compostage et redistribuer les matériaux
+              réutilisables.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-6">
+          <div
+            class="md:w-1/4 flex flex-col items-center justify-center text-center"
+          >
+            <div
+              class="bg-(--color-dark-green) p-4 rounded-full mb-3 w-16 h-16 flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-10 w-10 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg text-(--color-dark-green) w-full">
+              Énergie Verte
+            </h3>
+          </div>
+          <div class="md:w-3/4">
+            <p class="text-gray-700 mb-4">
+              Nous nous engageons à utiliser des sources d'énergie renouvelable
+              pour alimenter notre festival. Grâce à des panneaux solaires
+              mobiles et à des groupes électrogènes fonctionnant au biodiesel,
+              nous réduisons considérablement notre empreinte carbone.
+            </p>
+            <p class="text-gray-700">
+              Les projecteurs et l'éclairage utilisent des technologies LED à
+              basse consommation, tandis que nos systèmes de sonorisation sont
+              optimisés pour minimiser la consommation d'énergie.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-6">
+          <div
+            class="md:w-1/4 flex flex-col items-center justify-center text-center"
+          >
+            <div
+              class="bg-(--color-dark-green) p-4 rounded-full mb-3 w-16 h-16 flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-10 w-10 text-white rotate-90"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg text-(--color-dark-green) w-full">
+              Transports Durables
+            </h3>
+          </div>
+          <div class="md:w-3/4">
+            <p class="text-gray-700 mb-4">
+              Nous encourageons l'utilisation de transports collectifs ou doux
+              pour se rendre au festival. Des navettes gratuites sont mises en
+              place depuis la gare de Belfort et les principaux points de la
+              ville.
+            </p>
+            <p class="text-gray-700">
+              Un parking à vélos sécurisé est disponible sur le site, et nous
+              proposons un système de covoiturage via notre plateforme en ligne.
+              Les festivaliers utilisant ces options de transport durable
+              bénéficient de réductions sur leur pass.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-6">
+          <div
+            class="md:w-1/4 flex flex-col items-center justify-center text-center"
+          >
+            <div
+              class="bg-(--color-dark-green) p-4 rounded-full mb-3 w-16 h-16 flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-10 w-10 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg text-(--color-dark-green) w-full">
+              Consommation Responsable
+            </h3>
+          </div>
+          <div class="md:w-3/4">
+            <p class="text-gray-700 mb-4">
+              Notre espace restauration privilégie les produits locaux,
+              biologiques et de saison. Nous travaillons exclusivement avec des
+              producteurs situés dans un rayon de 50 km pour réduire l'empreinte
+              carbone liée au transport.
+            </p>
+            <p class="text-gray-700">
+              Tous nos contenants sont biodégradables ou réutilisables, et nous
+              proposons un système de consigne pour les gobelets. Nous avons
+              banni le plastique à usage unique de notre festival et
+              encourageons les festivaliers à apporter leur propre gourde.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-6">
+          <div
+            class="md:w-1/4 flex flex-col items-center justify-center text-center"
+          >
+            <div
+              class="bg-(--color-dark-green) p-4 rounded-full mb-3 w-16 h-16 flex items-center justify-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-10 w-10 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                ></path>
+              </svg>
+            </div>
+            <h3 class="font-bold text-lg text-(--color-dark-green) w-full">
+              Sensibilisation à l'Écologie
+            </h3>
+          </div>
+          <div class="md:w-3/4">
+            <p class="text-gray-700 mb-4">
+              Au-delà des films projetés, nous organisons des ateliers et des
+              conférences sur les enjeux environnementaux. Des espaces
+              pédagogiques interactifs permettent aux festivaliers de tous âges
+              de s'informer et d'échanger sur des pratiques durables.
+            </p>
+            <p class="text-gray-700">
+              Nous collaborons avec des associations locales de protection de
+              l'environnement pour proposer des activités de sensibilisation,
+              comme des balades nature guidées autour de la presqu'île du
+              Malsaucy ou des ateliers de fabrication d'objets à partir de
+              matériaux recyclés.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white shadow-lg rounded-xl p-6 md:p-8">
+      <h2
+        class="text-2xl font-bold mb-6 text-(--color-dark-green) border-b pb-2"
+      >
+        Rejoignez-nous dans nos actions !
+      </h2>
+      <p class="text-gray-700 mb-6">
+        Nous croyons fermement que chaque geste compte dans la protection de
+        notre environnement. En participant au Festival CinéNature, vous
+        contribuez à un événement qui place l'écologie au cœur de ses
+        préoccupations.
+      </p>
+      <p class="text-gray-700 mb-6">
+        Nous vous invitons à adopter des comportements éco-responsables pendant
+        le festival : utilisez les transports durables, triez vos déchets,
+        apportez votre gourde et profitez pleinement de notre programmation
+        engagée !
+      </p>
+      <div class="flex justify-center">
+        <Button><a href="/contact">Contactez-nous</a></Button>
+      </div>
+    </section>
+
+    <section class="bg-white shadow-lg rounded-xl p-6 md:p-8">
+      <h2
+        class="text-2xl font-bold mb-6 text-(--color-dark-green) border-b pb-2"
+      >
+        Nos certifications et partenariats
+      </h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-6">
+        <img
+          loading="lazy"
+          src={cinemaAujourdhui.src}
+          alt="logo cinéma d'aujourd'hui"
+          class="object-center object-contain h-full w-full"
+        /><img
+          loading="lazy"
+          src={territoireBelfort.src}
+          alt="logo du territoire de belfort"
+          class="object-center object-contain h-full w-full"
+        /><img
+          loading="lazy"
+          src={bourgogneFrancheCompte.src}
+          alt="logo de la région bourgogne franche comté"
+          class="object-center object-contain h-full w-full"
+        /><img
+          loading="lazy"
+          src={cnc.src}
+          alt="logo du cnc"
+          class="object-center object-contain h-full w-full"
+        />
+      </div>
+    </section>
+  </div>
+</Layout>

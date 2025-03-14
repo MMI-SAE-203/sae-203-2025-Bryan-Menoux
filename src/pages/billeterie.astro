@@ -1,13 +1,325 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import ticket from "../assets/ticket.webp";
 
 const hero = {
-  title: "Billeterie",
-  description: "Réservez vos places pour nos prochaines séances",
-  image: "/src/assets/hero_billeterie.jpg",
+  title: "Billetterie",
 };
 ---
 
-<Layout>
-  <h1>temp</h1>
+<Layout hero={hero} title="Billetterie">
+  <div
+    id="first"
+    class="max-w-4xl mx-auto px-4 py-8 space-y-12 flex flex-col gap-8"
+  >
+    <section class="bg-white shadow-lg rounded-xl p-6 md:p-8 text-center">
+      <h2 class="text-2xl font-bold mb-6 text-(--color-dark-green)">
+        Achetez vos billets pour le Festival CinéNature
+      </h2>
+      <p class="text-gray-700 leading-relaxed max-w-2xl mx-auto mb-8">
+        Rejoignez-nous du 5 au 8 juillet 2025 sur la presqu'île du Malsaucy pour
+        une expérience cinématographique unique en plein air. Découvrez notre
+        sélection de films d'auteur et documentaires engagés sur l'environnement
+        et participez aux rencontres avec les réalisateurs.
+      </p>
+      <div class="flex justify-center">
+        <img
+          src={ticket.src}
+          alt="Ticket du Festival CinéNature"
+          class="w-full max-w-md rounded-lg shadow-md"
+        />
+      </div>
+    </section>
+
+    <section class="bg-white shadow-lg rounded-xl p-6 md:p-8">
+      <h2
+        class="text-2xl font-bold mb-6 text-(--color-dark-green) border-b pb-2"
+      >
+        Nos formules
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-8 mt-8">
+        <div class="border rounded-xl overflow-hidden shadow-md flex flex-col">
+          <div class="bg-gray-50 p-4 border-b">
+            <h3 class="text-xl font-bold text-(--color-dark-green)">
+              PASS JOURNÉE
+            </h3>
+          </div>
+          <div class="p-5 flex-grow">
+            <div class="flex justify-between mb-4">
+              <span class="font-medium">Tarif plein</span>
+              <span>12 €</span>
+            </div>
+            <div class="flex justify-between mb-4">
+              <span class="font-medium">OU Tarif réduit</span>
+              <span>8 €</span>
+            </div>
+            <div class="border-t pt-4 mt-4">
+              <h4 class="font-bold mb-2">ACCÈS</h4>
+              <p class="text-sm text-gray-700">
+                Accès à toutes les projections et ateliers pendant une journée.
+              </p>
+            </div>
+          </div>
+          <div class="p-4 bg-gray-50 mt-auto">
+            <Button>Acheter</Button>
+          </div>
+        </div>
+
+        <div
+          class="border rounded-xl overflow-hidden flex flex-col border-(--color-dark-green) shadow-(--color-dark-green)"
+        >
+          <div class="bg-(--color-dark-green) p-4 border-b text-white">
+            <h3 class="text-xl font-bold">PASS 4 JOURS</h3>
+          </div>
+          <div class="p-5 flex-grow">
+            <div class="flex justify-between mb-4">
+              <span class="font-medium">Tarif plein</span>
+              <span>40 €</span>
+            </div>
+            <div class="flex justify-between mb-4">
+              <span class="font-medium">OU Tarif réduit</span>
+              <span>30 €</span>
+            </div>
+            <div class="border-t pt-4 mt-4">
+              <h4 class="font-bold mb-2">ACCÈS</h4>
+              <p class="text-sm text-gray-700">
+                Profitez de l'intégralité du festival : projections, ateliers et
+                rencontres avec les réalisateurs.
+              </p>
+            </div>
+          </div>
+          <div class="p-4 bg-gray-50 mt-auto">
+            <Button>Acheter</Button>
+          </div>
+        </div>
+
+        <div class="border rounded-xl overflow-hidden shadow-md flex flex-col">
+          <div class="bg-gray-50 p-4 border-b">
+            <h3 class="text-xl font-bold text-(--color-dark-green)">
+              BILLET INDIVIDUEL
+            </h3>
+          </div>
+          <div class="p-5 flex-grow">
+            <div class="flex justify-between mb-4">
+              <span class="font-medium">Tarif plein</span>
+              <span>8 €</span>
+            </div>
+            <div class="flex justify-between mb-4">
+              <span class="font-medium">OU Tarif réduit</span>
+              <span>5 €</span>
+            </div>
+            <div class="border-t pt-4 mt-4">
+              <h4 class="font-bold mb-2">ACCÈS</h4>
+              <p class="text-sm text-gray-700">
+                Accès à une projection unique (film ou documentaire).
+              </p>
+            </div>
+          </div>
+          <div class="p-4 bg-gray-50 mt-auto">
+            <Button>Acheter</Button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white shadow-lg rounded-xl p-6 md:p-8">
+      <h2
+        class="text-2xl font-bold mb-6 text-(--color-dark-green) border-b pb-2"
+      >
+        Formulaire d'achat
+      </h2>
+      <form class="flex flex-col gap-5">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 gap-x-8">
+          <div>
+            <label for="nom" class="block text-gray-700 font-medium mb-1"
+              >Nom & Prénom</label
+            >
+            <input
+              type="text"
+              id="nom"
+              placeholder="Votre nom et prénom"
+              class="px-4 w-full border border-gray-300 focus:border-(--color-dark-green) focus:ring-2 focus:ring-(--color-dark-green) focus:ring-opacity-20 rounded-lg p-3 transition-all outline-none"
+              required
+            />
+          </div>
+          <div>
+            <label for="email" class="block text-gray-700 font-medium mb-1"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              placeholder="Votre email"
+              class="px-4 w-full border border-gray-300 focus:border-(--color-dark-green) focus:ring-2 focus:ring-(--color-dark-green) focus:ring-opacity-20 rounded-lg p-3 transition-all outline-none"
+              required
+            />
+          </div>
+        </div>
+
+        <div>
+          <label for="formule" class="block text-gray-700 font-medium mb-1"
+            >Formule</label
+          >
+          <select
+            id="formule"
+            class="px-4 w-full border border-gray-300 focus:border-(--color-dark-green) focus:ring-2 focus:ring-(--color-dark-green) focus:ring-opacity-20 rounded-lg p-3 transition-all outline-none"
+            required
+          >
+            <option value="" disabled selected
+              >Sélectionnez votre formule</option
+            >
+            <option value="pass-journee-plein"
+              >Pass Journée - Tarif plein (12 €)</option
+            >
+            <option value="pass-journee-reduit"
+              >Pass Journée - Tarif réduit (8 €)</option
+            >
+            <option value="pass-4jours-plein"
+              >Pass 4 jours - Tarif plein (40 €)</option
+            >
+            <option value="pass-4jours-reduit"
+              >Pass 4 jours - Tarif réduit (30 €)</option
+            >
+            <option value="billet-individuel-plein"
+              >Billet individuel - Tarif plein (8 €)</option
+            >
+            <option value="billet-individuel-reduit"
+              >Billet individuel - Tarif réduit (5 €)</option
+            >
+          </select>
+        </div>
+
+        <div>
+          <label for="date" class="block text-gray-700 font-medium mb-1"
+            >Date</label
+          >
+          <select
+            id="date"
+            class="px-4 w-full border border-gray-300 focus:border-(--color-dark-green) focus:ring-2 focus:ring-(--color-dark-green) focus:ring-opacity-20 rounded-lg p-3 transition-all outline-none"
+            required
+          >
+            <option value="" disabled selected>Sélectionnez la date</option>
+            <option value="5-juillet">5 juillet 2025</option>
+            <option value="6-juillet">6 juillet 2025</option>
+            <option value="7-juillet">7 juillet 2025</option>
+            <option value="8-juillet">8 juillet 2025</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="quantity" class="block text-gray-700 font-medium mb-1"
+            >Quantité</label
+          >
+          <input
+            type="number"
+            id="quantity"
+            min="1"
+            max="10"
+            value="1"
+            class="px-4 w-full border border-gray-300 focus:border-(--color-dark-green) focus:ring-2 focus:ring-(--color-dark-green) focus:ring-opacity-20 rounded-lg p-3 transition-all outline-none"
+            required
+          />
+        </div>
+
+        <div class="flex items-center mt-2">
+          <input
+            type="checkbox"
+            id="conditions"
+            class="px-4 rounded text-(--color-dark-green) mr-2 focus:ring-(--color-dark-green)"
+            required
+          />
+          <label for="conditions" class="text-gray-700 text-sm"
+            >J'accepte les conditions générales de vente</label
+          >
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 mt-4">
+          <a
+            href="/contact"
+            class="bg-gray-200 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-300 transition-colors shadow-md flex items-center justify-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
+            </svg>
+            Contacter le support
+          </a>
+          <button
+            type="submit"
+            class="bg-(--color-dark-green) text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-colors shadow-md flex items-center justify-center sm:flex-grow"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+              ></path>
+            </svg>
+            Procéder à l'achat
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <section class="bg-white shadow-lg rounded-xl p-6 md:p-8">
+      <h2
+        class="text-2xl font-bold mb-6 text-(--color-dark-green) border-b pb-2"
+      >
+        Informations pratiques
+      </h2>
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Tarif réduit</h3>
+          <p class="text-gray-700">
+            Le tarif réduit s'applique aux étudiants, demandeurs d'emploi,
+            personnes en situation de handicap et moins de 18 ans (sur
+            présentation d'un justificatif).
+          </p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Modalités de paiement</h3>
+          <p class="text-gray-700">
+            Le paiement s'effectue en ligne par carte bancaire ou PayPal. Les
+            billets vous seront envoyés par email sous forme de e-tickets à
+            imprimer ou à présenter sur votre smartphone.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Conditions d'annulation</h3>
+          <p class="text-gray-700">
+            Les billets sont échangeables jusqu'à 48h avant l'événement. Aucun
+            remboursement ne sera possible sauf en cas d'annulation de
+            l'événement.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-2">Accès au site</h3>
+          <p class="text-gray-700">
+            La presqu'île du Malsaucy est accessible en voiture (parking
+            gratuit) et en navettes depuis la gare de Belfort. Des navettes
+            gratuites seront mises à disposition pour les festivaliers.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
 </Layout>

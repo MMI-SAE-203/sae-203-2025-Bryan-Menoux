@@ -2,6 +2,10 @@
 import Layout from "../../layouts/Layout.astro";
 import Carousel from "../../components/Carousel.astro";
 import GenreSelector from "../../components/GenreSelector.astro";
+import pleinAir from "../../assets/cinema_plein_air.webp";
+import atelier from "../../assets/plant.webp";
+import rencontre from "../../assets/conference.webp";
+import projection from "../../assets/jeune.webp";
 
 import {
   formatDate,
@@ -73,7 +77,6 @@ let hero = {
       }
     </div>
   </div>
-
   <div class="bg-gray-50 py-12 px-6 md:px-12">
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold text-green-700 text-center mb-8">
@@ -96,6 +99,149 @@ let hero = {
             </div>
           ))
         }
+      </div>
+    </div>
+  </div>
+  <div class="container mx-auto px-6 md:px-12 mb-16 mt-16">
+    <div class="flex flex-col gap-12">
+      <div class="bg-white shadow-lg rounded-xl p-6 md:p-8">
+        <h2 class="text-2xl font-bold mb-6 text-green-700 border-b pb-2">
+          Cinéma Plein Air
+        </h2>
+        <div class="flex flex-col md:flex-row gap-6">
+          <div class="md:w-1/3">
+            <img
+              src={pleinAir.src}
+              alt="Projection en plein air"
+              class="w-full h-auto rounded-lg shadow-md"
+            />
+          </div>
+          <div class="md:w-2/3">
+            <p class="text-gray-700 mb-4">
+              Chaque soir, dès la tombée de la nuit, profitez d'une projection
+              en plein air dans un cadre exceptionnel. Confortablement installés
+              dans des transats ou sur des couvertures, laissez-vous emporter
+              par la magie du cinéma au cœur de la nature.
+            </p>
+            <p class="text-gray-700 mb-4">
+              Les projections ont lieu sur la presqu'île du Malsaucy, offrant un
+              panorama magnifique sur le lac et les montagnes environnantes. Un
+              écran géant de 12m de large et un système de sonorisation de
+              qualité professionnelle vous garantissent une expérience
+              cinématographique inoubliable.
+            </p>
+            <p class="text-gray-700">
+              N'oubliez pas d'apporter un vêtement chaud pour les soirées
+              fraîches et une lampe de poche pour le retour. Des couvertures
+              sont disponibles à la location (quantité limitée).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-lg rounded-xl p-6 md:p-8">
+        <h2 class="text-2xl font-bold mb-6 text-green-700 border-b pb-2">
+          Les Ateliers Participatifs
+        </h2>
+        <div class="flex flex-col md:flex-row gap-6">
+          <div class="md:w-1/3">
+            <img
+              src={atelier.src}
+              alt="Atelier collaboratif"
+              class="w-full h-auto rounded-lg shadow-md"
+            />
+          </div>
+          <div class="md:w-2/3">
+            <p class="text-gray-700 mb-4">
+              Participez à nos ateliers pour échanger, apprendre et agir !
+              Accessibles à tous, nos ateliers participatifs vous permettent de
+              développer vos connaissances sur l'environnement et d'acquérir des
+              compétences pratiques.
+            </p>
+            <p class="text-gray-700 mb-4">
+              Au programme : fabrication de produits ménagers écologiques,
+              initiation au jardinage biologique, techniques de compostage,
+              ateliers de réparation... Nos intervenants experts vous
+              transmettent leur savoir-faire dans une ambiance conviviale et
+              détendue.
+            </p>
+            <p class="text-gray-700">
+              Les ateliers sont gratuits, mais l'inscription est obligatoire car
+              les places sont limitées. Rendez-vous à l'accueil du festival pour
+              vous inscrire ou réservez en ligne sur notre site.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-lg rounded-xl p-6 md:p-8">
+        <h2 class="text-2xl font-bold mb-6 text-green-700 border-b pb-2">
+          Rencontres avec les Réalisateurs
+        </h2>
+        <div class="flex flex-col md:flex-row gap-6">
+          <div class="md:w-1/3">
+            <img
+              src={rencontre.src}
+              alt="Rencontre avec un réalisateur"
+              class="w-full h-auto rounded-lg shadow-md"
+            />
+          </div>
+          <div class="md:w-2/3">
+            <p class="text-gray-700 mb-4">
+              Profitez d'un moment privilégié avec les créateurs des films
+              projetés ! Après chaque séance, les réalisateurs viennent échanger
+              avec le public lors de discussions animées et passionnantes.
+            </p>
+            <p class="text-gray-700 mb-4">
+              Ces rencontres sont l'occasion d'en savoir plus sur les coulisses
+              du tournage, les défis techniques rencontrés et les motivations
+              qui ont poussé ces artistes à s'engager sur des thématiques
+              environnementales. Un moment unique pour approfondir votre
+              compréhension des enjeux abordés dans les films.
+            </p>
+            <p class="text-gray-700">
+              Les rencontres sont ouvertes à tous les spectateurs munis d'un
+              billet pour la séance concernée. Durée moyenne : 30 minutes après
+              la projection.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-lg rounded-xl p-6 md:p-8">
+        <h2 class="text-2xl font-bold mb-6 text-green-700 border-b pb-2">
+          Films projetés et ateliers fidèles
+        </h2>
+        <div class="flex flex-col md:flex-row gap-6">
+          <div class="md:w-1/3">
+            <img
+              src={projection.src}
+              alt="Projection de film documentaire"
+              class="w-full h-auto rounded-lg shadow-md"
+            />
+          </div>
+          <div class="md:w-2/3">
+            <p class="text-gray-700 mb-4">
+              Les projections du festival sont le fruit d'une sélection
+              rigoureuse parmi des centaines de films du monde entier.
+              Documentaires, fictions, courts-métrages, animations... tous les
+              formats sont représentés pour vous offrir un panorama complet de
+              la création cinématographique dédiée à l'environnement.
+            </p>
+            <p class="text-gray-700 mb-4">
+              Chaque année, nous mettons à l'honneur un pays ou une thématique
+              spécifique. Pour cette édition, focus sur les océans, avec des
+              œuvres évoquant aussi bien leur beauté stupéfiante que les menaces
+              qui pèsent sur ces écosystèmes fragiles.
+            </p>
+            <p class="text-gray-700">
+              Tous les films sont projetés en version originale sous-titrée en
+              français. Des casques audio sont disponibles pour les personnes
+              malentendantes et certaines séances bénéficient d'une
+              audiodescription.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

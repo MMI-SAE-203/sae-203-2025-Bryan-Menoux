@@ -1,1 +1,2 @@
-mail : "admin@admin.com" mdp :"OO6FN9qKv81QxvM"
+mail : admin@admin.com 
+mdp :OO6FN9qKv81QxvM

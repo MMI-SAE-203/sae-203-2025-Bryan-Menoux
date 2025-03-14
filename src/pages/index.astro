@@ -1,11 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Hero.astro";
 import Button from "../components/Button.astro";
 import heroImg from "../assets/malsaucy.webp";
 import heroImgLg from "../assets/malsaucy_2.webp";
 import Card from "../components/Card.astro";
 import malsaucy from "../assets/malsaucy_2.webp";
+import progammation from "../assets/cinema_plein_air.webp";
 import ticket from "../assets/ticket.webp";
 import invite from "../assets/invites.webp";
 import cinemaAujourdhui from "../assets/cinema_aujourdhui.webp";
@@ -47,11 +47,11 @@ let hero = {
     <img
       loading="lazy"
       slot="image"
-      src={malsaucy.src}
+      src={progammation.src}
       alt="photographie de la presqu'île du malsaucy"
       class="object-center object-cover h-full w-full"
     />
-    <span slot="title">Les activités</span>
+    <span slot="title">La programmation</span>
     <span slot="chapo"
       >Le Festival CinéNature, du 5 au 8 juillet 2025 sur la presqu’île du
       Malsaucy près de Belfort, vous invite à une expérience cinématographique
@@ -59,7 +59,7 @@ let hero = {
       la nature, avec une programmation de films d’auteur et de documentaires
       abordant des thématiques environnementales et sociétales.</span
     >
-    <Button slot="button"><a href="/activite">En savoir plus</a></Button>
+    <Button slot="button"><a href="/programme">En savoir plus</a></Button>
   </Card>
   <Card>
     <img
